@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap5',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # static files are not loading in django
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, ''),)
+
+AUTH_USER_MODEL = 'users.User'
