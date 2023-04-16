@@ -41,3 +41,4 @@ def login(request):
             return HttpResponse('User does not exist')
     else:
         return render(request, 'login.html')
+
