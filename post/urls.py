@@ -6,4 +6,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('test/', views.post, name=''),
+    path('save_post/', views.save_post, name='save_post'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
