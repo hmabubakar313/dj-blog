@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Home</h1>
+    <p>Welcome to the home page!</p>
+   
+    {% for x in post %}
+    <p>{{x.title}}</p>
+    <p>{{x.post}}</p>
+    <p>{{x.created_date}}</p>
+    <img src="{{x.images.url}}" alt="image" width="200" height="200">
+    <br>
+    {% endfor %}
+
+{% endblock %}

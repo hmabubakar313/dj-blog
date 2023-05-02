@@ -6,7 +6,7 @@ from .models import Post
 
 
 
-def post(request):
+def create(request):
     return render(request, 'blog.html')
 
 
@@ -15,13 +15,30 @@ def post(request):
 def save_post(request):
     if request.method == 'POST':
         title = request.POST['title']
-        image = request.POST['bimgs']
         post = request.POST['content']
-        
-        # save data to database
-        post = Post(title=title, image=image, post=post)
+        image = request.FILES.get('bimgs', False)
+        print('image', image)
+        print('title', title)
+        print('post', post)
+
+        post = Post(title=title, post=post)
+        if image:
+            post.image = image 
         post.save()
-        return HttpResponse('Post saved successfully')
+        
+
+        return httpResponse('Post saved successfully')
     else:
         return HttpResponse('Invalid method')
+    
+    
+
+def feed(request):
+    post = Post.objects.all()
+    return render(request, 'feed.html', {'post':post})
+
+
+
+
+
         
