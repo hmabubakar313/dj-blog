@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <form method="post" role="form" action="/post/feed/" enctype="multipart/form-data">
+      <form method="post" role="form" action="/post/save_post/" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
           <input type="text" class="form-control" name="title" placeholder="Title"/>

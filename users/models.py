@@ -5,6 +5,7 @@ from django.utils.translation import gettext as _
 from .managers import UserManager
 
 class User(AbstractUser):
+    user_id = models.AutoField(primary_key=True,blank=True, null=False)
     email = models.EmailField(_('email address'), unique=True)
     password = models.CharField(max_length=100)
 
